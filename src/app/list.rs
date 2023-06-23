@@ -8,7 +8,7 @@ fn add_team_to_poule(team : &str, teams: Vec<Team>,poule:i32) -> Vec<Team> {
 
 }
 
-fn add_team_to_team(team: &str, teams: Vec<Team>) -> Result<Vec<Team>, String> {
+pub(crate)  fn add_team_to_team(team: &str, teams: Vec<Team>) -> Result<Vec<Team>, String> {
     let newteam: String = team.to_string();
 
     if is_in_list_team(newteam.as_str(), teams.clone()){
