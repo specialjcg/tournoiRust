@@ -16,7 +16,9 @@ pub fn app() -> Html {
          <main>
             <h1>{ "Liste des Team" }</h1>
          <div>
-                <CappedInputComponent/>
+               <div>
+                <CappedInputComponent min_value={0} max_value={20}/>
+            </div>
             </div>
             <table class="styled-table">
                 <thead>
