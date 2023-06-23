@@ -4,29 +4,20 @@ use yew::prelude::*;
 mod list;
 use list::mainlist;
 use list::Team;
-
+use capped_input_component::CappedInputComponent;
+mod capped_input_component;
 
 
 #[function_component(App)]
 pub fn app() -> Html {
     let test=mainlist();
-    let name = use_state(|| String::new());
-    let oninput = Callback::from({
-        let name = name.clone();
-        move |input_event: InputEvent| {
-            let target: HtmlInputElement = input_event
-                .target()
-                .unwrap_throw()
-                .dyn_into()
-                .unwrap_throw();
-            //web_sys::console::log_1(&target.value().into()); // <- can console the value.
-            name.set(target.value());
-        }
-    });
+
     html! {
          <main>
             <h1>{ "Liste des Team" }</h1>
-        <input {oninput}  />
+         <div>
+                <CappedInputComponent/>
+            </div>
             <table class="styled-table">
                 <thead>
                     <tr>
