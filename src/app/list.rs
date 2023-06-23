@@ -89,7 +89,7 @@ pub(crate) struct Team {
 
 #[cfg(test)]
 mod tests {
-    use crate::{ add_team_to_team, change_name, Team};
+    use crate::Team;
     use crate::app::list::{add_team_to_team, change_name, Team};
     use super::add_team_to_poule;
     use super::remove_team;
