@@ -1,10 +1,10 @@
 use web_sys::{HtmlInputElement};
 use yew::{prelude::*};
-use crate::app::list::{add_team_to_team, Team};
+use crate::app::list::{add_team_to_team, remove_team, Team};
 
 #[function_component(ListComponent)]
 pub fn list_component() -> Html {
-    let name_list = use_state(Vec::new);
+    let mut name_list = use_state(Vec::new);
     let input_ref: NodeRef = NodeRef::default();
 
     let on_click = {
@@ -52,11 +52,23 @@ pub fn list_component() -> Html {
         </div>
     }
 }
-fn render_team_row(team: &Team) -> Html {
+fn render_team_row(team: &mut Team) -> Html {
+
+    let on_click = {
+        Callback::from(move |_e: MouseEvent| {
+
+
+            // let new_name:Team = name_input_element.value();
+            // name_input_element.set_value("");
+            // names.push(new_name);
+            team.team= "".parse().unwrap();
+        })
+    };
     html! {
         <tr class="active-row">
             <td>{ &team.team }</td>
             <td>{ &team.poule }</td>
+         <button class="btn-hover color-5" onclick={on_click}>{"remove from list"}</button>
         </tr>
     }
 }

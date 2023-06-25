@@ -33,7 +33,7 @@ fn is_in_list_team(teamtest: &str, teams: Vec<Team>) -> bool {
 
 
 
-fn remove_team(team : &str, teams: Vec<Team>) -> Vec<Team>  {
+pub(crate) fn remove_team(team : &str, teams: Vec<Team>) -> Vec<Team>  {
     let mut teamvec: Vec<Team> = teams.clone();
     let team_poule:Team=Team{team: team.to_string(), poule: 0 };
     let index = teamvec.iter().position(|x| *x.team == team_poule.team).unwrap();
