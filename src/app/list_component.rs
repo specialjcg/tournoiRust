@@ -45,23 +45,24 @@ pub fn list_component() -> Html {
                     </tr>
                 </thead>
                 <tbody>
-                    { for (*name_list).iter().map(render_team_row) }
+                    { for (*name_list).iter().map(|team|render_team_row(team)) }
                 </tbody>
             </table>
 
         </div>
     }
 }
-fn render_team_row(team: &mut Team) -> Html {
+fn render_team_row(team: &Team) -> Html {
 
     let on_click = {
+        // let mut name_list = names.clone();
         Callback::from(move |_e: MouseEvent| {
 
 
             // let new_name:Team = name_input_element.value();
             // name_input_element.set_value("");
             // names.push(new_name);
-            team.team= "".parse().unwrap();
+            // name_list=remove_team(team.team.as_str(), name_list)
         })
     };
     html! {
