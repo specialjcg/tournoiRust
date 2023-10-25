@@ -8,11 +8,12 @@ body {
   align-items: center;
   display: flex;
   justify-content: center;
-
+  font-family: 'Poppins', sans-serif;
+  flex-direction: column;
+  min-height: 100vh;
   background: linear-gradient(to bottom right, #444444, #009a5b);
   font-size: 1.5rem;
 }
-
 main {
   color: #fff6d5;
   font-family: sans-serif;
@@ -61,16 +62,31 @@ $primary: #11998e;
 $secondary: #38ef7d;
 $white: #fff;
 $gray: #9b9b9b;
+.form__container{
+  position:absolute;
+  top:10px;
+  left:450px
+
+}
+
+
+
 .form__group {
   position: relative;
   padding: 15px 0 0;
   margin-top: 10px;
   width: 50%;
 }
-
+.title{
+  position: absolute;
+  top:10px;
+  left:10px;
+}
 .form__field {
+  position: absolute;
+  top :30px;
   font-family: inherit;
-  width: 100%;
+  width: 300px;
   border: 0;
   border-bottom: 2px solid $gray;
   outline: 0;
@@ -92,45 +108,47 @@ $gray: #9b9b9b;
 }
 
 .form__label {
-  position: absolute;
-  top: 0;
+  top: 10px;
   display: block;
   transition: 0.2s;
   font-size: 1rem;
   color: $gray;
 }
+.buttonsaddTeam{
+  position: absolute;
+  top:10px;
+  left:400px;
+  width:80px;
+}
+.buttonsRandomTeam{
+  position: absolute;
+  top:10px;
+  left:600px;
+  width:80px;
+}
+.buttonsPouleTeam{
+  position: absolute;
+  top:10px;
+  left:800px;
+  width:80px;
+}
+.buttonsaddTeamlist{
+  flex-wrap: wrap;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width:100px;
+}
+.btn-container {
+  margin-left: 10px;
+}
 
-.form__field:focus {
-  ~ .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: $primary;
-    font-weight:700;
-  }
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, $primary,$secondary);
-  border-image-slice: 1;
-}
-/* reset input */
-.form__field{
-  &:required,&:invalid { box-shadow:none; }
-}
 /* demo */
-body {
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1.5rem;
-  background-color:#222222;
-}
+
 .styled-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
@@ -148,7 +166,23 @@ body {
   margin: 10%;
   text-align: center;
 }
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 
+.flex-items{
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
 .btn-hover {
   width: 200px;
   font-size: 16px;
